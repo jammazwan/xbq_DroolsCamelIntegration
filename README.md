@@ -8,7 +8,7 @@
 
 ### DroolsCamelIntegration 
 
-Functionality: **_Bare bones Drools run inside a Camel route_**
+Functionality: **_Running drools rules engine inside a Camel route_**
 
 ---
 

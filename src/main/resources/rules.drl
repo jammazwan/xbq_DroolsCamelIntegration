@@ -1,0 +1,56 @@
+package jammazwan.xbq;
+
+global java.util.Set controlSet;
+
+rule "does it have a pom?"
+no-loop
+when
+	FileMaintainer( hasPom, $val : "pom" )
+then
+	controlSet.add($val);
+end
+
+
+rule "does it have a README.md?"
+no-loop
+when
+	FileMaintainer( hasReadme, $val : "README" )
+then
+	controlSet.add($val);
+end
+
+rule "does it have a NOTES.md?"
+no-loop
+when
+	FileMaintainer( hasNotes, $val : "NOTES" )
+then
+	controlSet.add($val);
+end
+
+
+rule "does it have an EXTRA.md?"
+no-loop
+when
+	FileMaintainer( hasExtra, $val : "EXTRA" )
+then
+	controlSet.add($val);
+end
+
+
+rule "does it have a Jenkinsfile?"
+no-loop
+when
+	FileMaintainer( hasJenkins, $val : "Jenkins" )
+then
+	controlSet.add($val);
+end
+
+
+rule "is it adequately documented?"
+no-loop
+when
+	FileMaintainer( hasReadme && hasNotes, $val : "adequatelyDocumented" )
+then
+	controlSet.add($val);
+end
+

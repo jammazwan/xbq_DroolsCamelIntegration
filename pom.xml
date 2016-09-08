@@ -20,10 +20,24 @@
 		<activemq-version>5.13.2</activemq-version>
 		<xbean-spring-version>4.5</xbean-spring-version>
 		<spring-context-version>4.2.5</spring-context-version>
+		<drools-version>7.0.0.Beta1</drools-version>
+		<junit-version>4.12</junit-version>
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-bom</artifactId>
+				<type>pom</type>
+				<version>${drools-version}</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-spring</artifactId>
@@ -66,6 +80,17 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-test</artifactId>
 			<version>${camel-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
