@@ -35,7 +35,9 @@ You man now import xbq_DroolsCamelIntegration into your IDE.
 
 ### Run Instructions:
 
-_tbd_
+Run XbqTest as a unit test, either from inside your IDE or from maven inside CLI.
+
+Further instructions or clarifications are in [NOTES.md] (https://github.com/jammazwan/xbq_DroolsCamelIntegration/blob/master/NOTES.md)
 
 ---
 
