@@ -4,13 +4,15 @@ High level overview:
 
  * Establishes FileMaintainer as a hack, to contain drools engine startup, and all project code except the Camel route.
  * Uses standard camel file routing to iterate through files in this project root
- * Launches through jammazwan.xbq.XbqTest, a junit test.
- * Camel route finds pom.xml, NOTES.md, README.md files in this project root
- * Camel route does not find EXTRA.md, or Jenkinsfile.
+ * Launches via jammazwan.xbq.XbqTest, a junit test.
+ * Camel route finds **pom.xml**, **NOTES.md**, **README.md** files in this project root
+ * Camel route does not find **EXTRA.md**, or **Jenkinsfile**.
  * For each file found, sets appropriate boolean in FileMaintainer class
  * Drools then reads FileMaintainer and checks for which files exist, firing rules accordingly.
- * Sets a global _Set_ member for each desired file found
- * Junit test checks global Set for existence of desired members
+ * Sets a global **_controlSet_** member for each desired file found
+ * Junit test checks global **_controlSet_** for existence of desired members.
+ 
+All things considered, it's a pretty lame use case for bringing in a rules engine, but it does work as a proof of concept to prove technical feasibility.
  
 ### Integration notes re: Drools
 
@@ -26,7 +28,7 @@ On a separate note, we had some trouble getting the pom.xml to work consistently
 
 As per notes above, this project is a proof of concept only and may not be representative of how you might integrate Drools with Camel in production code.
 
-### Special Credits - Mark Meandro, Gerald Cantor
+### Special Credits: Mark Meandro, Gerald Cantor
 
 This project would not be working without the help of Mark Meandro, _Camel/Fuse/RedHatTooling developer extraordinaire_. He led me to the initial maven archetype which we used to seed the project initially, and then later, when this quit working, debugged the pom dependencies to get it working again. This is the kind of guy you want on your team, for sure.
 
